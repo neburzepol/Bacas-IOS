@@ -10,7 +10,6 @@
 		F32376AC1CE934840053F8F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F32376AB1CE934840053F8F9 /* main.m */; };
 		F32376AF1CE934840053F8F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F32376AE1CE934840053F8F9 /* AppDelegate.m */; };
 		F32376B11CE934840053F8F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32376B01CE934840053F8F9 /* Assets.xcassets */; };
-		F32376B41CE934840053F8F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32376B21CE934840053F8F9 /* LaunchScreen.storyboard */; };
 		F32376BF1CE934840053F8F9 /* BaccusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F32376BE1CE934840053F8F9 /* BaccusTests.m */; };
 		F32376CA1CE934840053F8F9 /* BaccusUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F32376C91CE934840053F8F9 /* BaccusUITests.m */; };
 /* End PBXBuildFile section */
@@ -38,7 +37,6 @@
 		F32376AD1CE934840053F8F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F32376AE1CE934840053F8F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F32376B01CE934840053F8F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F32376B31CE934840053F8F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F32376B51CE934840053F8F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F32376BA1CE934840053F8F9 /* BaccusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaccusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32376BE1CE934840053F8F9 /* BaccusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaccusTests.m; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				F32376AD1CE934840053F8F9 /* AppDelegate.h */,
 				F32376AE1CE934840053F8F9 /* AppDelegate.m */,
 				F32376B01CE934840053F8F9 /* Assets.xcassets */,
-				F32376B21CE934840053F8F9 /* LaunchScreen.storyboard */,
 				F32376B51CE934840053F8F9 /* Info.plist */,
 				F32376AA1CE934840053F8F9 /* Supporting Files */,
 			);
@@ -236,7 +233,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F32376B11CE934840053F8F9 /* Assets.xcassets in Resources */,
-				F32376B41CE934840053F8F9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,17 +292,6 @@
 			targetProxy = F32376C61CE934840053F8F9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		F32376B21CE934840053F8F9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F32376B31CE934840053F8F9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F32376CC1CE934840053F8F9 /* Debug */ = {
