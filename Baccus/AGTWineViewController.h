@@ -11,8 +11,18 @@
 
 @interface AGTWineViewController : UIViewController
 
+@property (weak,nonatomic)IBOutlet UILabel *nameLabel;
+@property (weak,nonatomic)IBOutlet UILabel *wineryNameLabel;
+@property (weak,nonatomic)IBOutlet UILabel *typeLabel;
+@property (weak,nonatomic)IBOutlet UILabel *originLabel;
+@property (weak,nonatomic)IBOutlet UILabel *grapesLabel;
+@property (weak,nonatomic)IBOutlet UILabel *notesLabel;
+@property (weak,nonatomic)IBOutlet UIImageView *photoView;
+
 @property (strong, nonatomic) AGTWineModel *model;
 
 -(id)initWithModel:(AGTWineModel*) aModel;
+
+-(IBAction)displayWeb:(id)sender;
 
 @end
