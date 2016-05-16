@@ -15,6 +15,8 @@
 		F32376D91CE93E590053F8F9 /* AGTWineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F32376D81CE93E590053F8F9 /* AGTWineModel.m */; };
 		F32376DE1CE953610053F8F9 /* AGTWineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32376DC1CE953610053F8F9 /* AGTWineViewController.m */; };
 		F32376DF1CE953610053F8F9 /* AGTWineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32376DD1CE953610053F8F9 /* AGTWineViewController.xib */; };
+		F32376E21CE98F810053F8F9 /* splitView_score_glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F32376E11CE98F810053F8F9 /* splitView_score_glass@2x.png */; };
+		F32376E51CE98FF30053F8F9 /* bembibre.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F32376E41CE98FF30053F8F9 /* bembibre.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		F32376DB1CE953610053F8F9 /* AGTWineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWineViewController.h; sourceTree = "<group>"; };
 		F32376DC1CE953610053F8F9 /* AGTWineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWineViewController.m; sourceTree = "<group>"; };
 		F32376DD1CE953610053F8F9 /* AGTWineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTWineViewController.xib; sourceTree = "<group>"; };
+		F32376E11CE98F810053F8F9 /* splitView_score_glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splitView_score_glass@2x.png"; sourceTree = "<group>"; };
+		F32376E41CE98FF30053F8F9 /* bembibre.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bembibre.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 		F32376A91CE934840053F8F9 /* Baccus */ = {
 			isa = PBXGroup;
 			children = (
+				F32376E31CE98F870053F8F9 /* Resources */,
 				F32376E01CE953700053F8F9 /* Controllers */,
 				F32376DA1CE93E840053F8F9 /* Models */,
 				F32376AD1CE934840053F8F9 /* AppDelegate.h */,
@@ -156,6 +161,15 @@
 				F32376DD1CE953610053F8F9 /* AGTWineViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F32376E31CE98F870053F8F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F32376E41CE98FF30053F8F9 /* bembibre.jpg */,
+				F32376E11CE98F810053F8F9 /* splitView_score_glass@2x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +277,8 @@
 			files = (
 				F32376DF1CE953610053F8F9 /* AGTWineViewController.xib in Resources */,
 				F32376B11CE934840053F8F9 /* Assets.xcassets in Resources */,
+				F32376E21CE98F810053F8F9 /* splitView_score_glass@2x.png in Resources */,
+				F32376E51CE98FF30053F8F9 /* bembibre.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

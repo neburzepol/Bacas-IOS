@@ -19,6 +19,8 @@
 @property (weak,nonatomic)IBOutlet UILabel *notesLabel;
 @property (weak,nonatomic)IBOutlet UIImageView *photoView;
 
+@property(strong,nonatomic)IBOutletCollection(UIImageView) NSArray *ratingViews;
+
 @property (strong, nonatomic) AGTWineModel *model;
 
 -(id)initWithModel:(AGTWineModel*) aModel;
