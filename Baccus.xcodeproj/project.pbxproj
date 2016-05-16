@@ -12,6 +12,7 @@
 		F32376B11CE934840053F8F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32376B01CE934840053F8F9 /* Assets.xcassets */; };
 		F32376BF1CE934840053F8F9 /* BaccusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F32376BE1CE934840053F8F9 /* BaccusTests.m */; };
 		F32376CA1CE934840053F8F9 /* BaccusUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F32376C91CE934840053F8F9 /* BaccusUITests.m */; };
+		F32376D91CE93E590053F8F9 /* AGTWineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F32376D81CE93E590053F8F9 /* AGTWineModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		F32376C51CE934840053F8F9 /* BaccusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaccusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32376C91CE934840053F8F9 /* BaccusUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaccusUITests.m; sourceTree = "<group>"; };
 		F32376CB1CE934840053F8F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F32376D71CE93E590053F8F9 /* AGTWineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWineModel.h; sourceTree = "<group>"; };
+		F32376D81CE93E590053F8F9 /* AGTWineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWineModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,7 @@
 		F32376A91CE934840053F8F9 /* Baccus */ = {
 			isa = PBXGroup;
 			children = (
+				F32376DA1CE93E840053F8F9 /* Models */,
 				F32376AD1CE934840053F8F9 /* AppDelegate.h */,
 				F32376AE1CE934840053F8F9 /* AppDelegate.m */,
 				F32376B01CE934840053F8F9 /* Assets.xcassets */,
@@ -127,6 +131,15 @@
 				F32376CB1CE934840053F8F9 /* Info.plist */,
 			);
 			path = BaccusUITests;
+			sourceTree = "<group>";
+		};
+		F32376DA1CE93E840053F8F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F32376D71CE93E590053F8F9 /* AGTWineModel.h */,
+				F32376D81CE93E590053F8F9 /* AGTWineModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F32376AF1CE934840053F8F9 /* AppDelegate.m in Sources */,
+				F32376D91CE93E590053F8F9 /* AGTWineModel.m in Sources */,
 				F32376AC1CE934840053F8F9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
