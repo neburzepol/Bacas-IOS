@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "AGTWineModel.h"
 #import "AGTWineViewController.h"
+#import "AGTWebViewController.h"
 
 @interface AppDelegate ()
 
@@ -28,14 +29,15 @@
                                                  grapes:@[@"Mencía"]
                                          wineCompanyWeb:[NSURL URLWithString:@"http://www.dominiodetares.com/index.php/es/vinos/baltos/74-bembibrevinos"]
                                                   notes:@"Este vino muestra toda la complejidad y la elegancia de la variedad Mencía. En fase visual luce un color rojo picota muy cubierto con tonalidades violáceas en el menisco. En nariz aparecen recuerdos frutales muy intensos de frutas rojas (frambuesa, cereza) y una potente ciruela negra, así como tonos florales de la gama de las rosas y violetas, vegetales muy elegantes y complementarios, hojarasca verde, tabaco y maderas aromáticas (sándalo) que le brindan un toque ciertamente perfumado."
-                                                 rating:5
+                                                 rating:3
                                                   photo:[UIImage imageNamed:@"bembibre.jpg"]];
     
     // Creamos el controlador
-    AGTWineViewController *wineVC = [[AGTWineViewController alloc]initWithModel:tintorro];
+    //AGTWineViewController *wineVC = [[AGTWineViewController alloc]initWithModel:tintorro];
+    AGTWebViewController *webVC = [[AGTWebViewController alloc]initWithModel:tintorro];
     
     //Lo asignamos como controlador raiz
-    self.window.rootViewController = wineVC;
+    self.window.rootViewController = webVC;
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor orangeColor];//Asigna color a la pantallar

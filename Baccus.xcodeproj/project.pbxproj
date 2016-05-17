@@ -17,6 +17,8 @@
 		F32376DF1CE953610053F8F9 /* AGTWineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32376DD1CE953610053F8F9 /* AGTWineViewController.xib */; };
 		F32376E21CE98F810053F8F9 /* splitView_score_glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F32376E11CE98F810053F8F9 /* splitView_score_glass@2x.png */; };
 		F32376E51CE98FF30053F8F9 /* bembibre.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F32376E41CE98FF30053F8F9 /* bembibre.jpg */; };
+		F3F0F5741CEB8CD600F96007 /* AGTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F0F5721CEB8CD600F96007 /* AGTWebViewController.m */; };
+		F3F0F5751CEB8CD600F96007 /* AGTWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F0F5731CEB8CD600F96007 /* AGTWebViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,9 @@
 		F32376DD1CE953610053F8F9 /* AGTWineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTWineViewController.xib; sourceTree = "<group>"; };
 		F32376E11CE98F810053F8F9 /* splitView_score_glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splitView_score_glass@2x.png"; sourceTree = "<group>"; };
 		F32376E41CE98FF30053F8F9 /* bembibre.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bembibre.jpg; sourceTree = "<group>"; };
+		F3F0F5711CEB8CD600F96007 /* AGTWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWebViewController.h; sourceTree = "<group>"; };
+		F3F0F5721CEB8CD600F96007 /* AGTWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWebViewController.m; sourceTree = "<group>"; };
+		F3F0F5731CEB8CD600F96007 /* AGTWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTWebViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +164,9 @@
 				F32376DB1CE953610053F8F9 /* AGTWineViewController.h */,
 				F32376DC1CE953610053F8F9 /* AGTWineViewController.m */,
 				F32376DD1CE953610053F8F9 /* AGTWineViewController.xib */,
+				F3F0F5711CEB8CD600F96007 /* AGTWebViewController.h */,
+				F3F0F5721CEB8CD600F96007 /* AGTWebViewController.m */,
+				F3F0F5731CEB8CD600F96007 /* AGTWebViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -279,6 +287,7 @@
 				F32376B11CE934840053F8F9 /* Assets.xcassets in Resources */,
 				F32376E21CE98F810053F8F9 /* splitView_score_glass@2x.png in Resources */,
 				F32376E51CE98FF30053F8F9 /* bembibre.jpg in Resources */,
+				F3F0F5751CEB8CD600F96007 /* AGTWebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +314,7 @@
 			files = (
 				F32376DE1CE953610053F8F9 /* AGTWineViewController.m in Sources */,
 				F32376AF1CE934840053F8F9 /* AppDelegate.m in Sources */,
+				F3F0F5741CEB8CD600F96007 /* AGTWebViewController.m in Sources */,
 				F32376D91CE93E590053F8F9 /* AGTWineModel.m in Sources */,
 				F32376AC1CE934840053F8F9 /* main.m in Sources */,
 			);
