@@ -8,10 +8,6 @@
 
 #import "AGTWebViewController.h"
 
-@interface AGTWebViewController ()
-
-@end
-
 @implementation AGTWebViewController
 
 -(id)initWithModel:(AGTWineModel*)aModel{
@@ -51,8 +47,8 @@
 
 -(void)webViewDidStartLoad:(UIWebView *)webView{
     
-    self.activityView.hidden = NO;
     [self.activityView startAnimating];
+    [self.activityView setHidden:NO];
     
 }
 

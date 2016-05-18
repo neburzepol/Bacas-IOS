@@ -7,6 +7,7 @@
 //
 
 #import "AGTWineViewController.h"
+#import "AGTWebViewController.h"
 
 @implementation AGTWineViewController
 
@@ -29,6 +30,14 @@
 - (void)viewWillAppear:(BOOL)animated{//Si la vista va a aparecer mediante una animación
     [super viewWillAppear:animated];
     [self syncModelWithView];
+    
+    self.edgesForExtendedLayout= UIRectEdgeNone;
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.5
+                                                                        green:0
+                                                                         blue:0.13
+                                                                        alpha:1];
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -37,7 +46,13 @@
 
 #pragma mark - actions
 -(IBAction)displayWeb:(id)sender{
-    NSLog(@"Go to %@", self.model.wineCompanyWeb);
+    
+    //Crear un webVC
+    AGTWebViewController *webVC = [[AGTWebViewController alloc]initWithModel:self.model];
+    //Hacemos un push
+    [self.navigationController pushViewController:webVC animated:YES];
+    
+    
 }
 
 #pragma mark - utils

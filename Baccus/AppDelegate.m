@@ -34,13 +34,14 @@
     
     // Creamos los controlador
     AGTWineViewController *wineVC = [[AGTWineViewController alloc]initWithModel:tintorro];
-    AGTWebViewController *webVC = [[AGTWebViewController alloc]initWithModel:tintorro];
+    //AGTWebViewController *webVC = [[AGTWebViewController alloc]initWithModel:tintorro];
     
-    UITabBarController *tabVC = [[UITabBarController alloc]init];
-    tabVC.viewControllers = @[wineVC,webVC];
+    // Creamos el combinador
+    UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:wineVC];
+    
     
     //Lo asignamos como controlador raiz
-    self.window.rootViewController = tabVC;
+    self.window.rootViewController = navVC;
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor orangeColor];//Asigna color a la pantallar
