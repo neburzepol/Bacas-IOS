@@ -32,12 +32,15 @@
                                                  rating:3
                                                   photo:[UIImage imageNamed:@"bembibre.jpg"]];
     
-    // Creamos el controlador
-    //AGTWineViewController *wineVC = [[AGTWineViewController alloc]initWithModel:tintorro];
+    // Creamos los controlador
+    AGTWineViewController *wineVC = [[AGTWineViewController alloc]initWithModel:tintorro];
     AGTWebViewController *webVC = [[AGTWebViewController alloc]initWithModel:tintorro];
     
+    UITabBarController *tabVC = [[UITabBarController alloc]init];
+    tabVC.viewControllers = @[wineVC,webVC];
+    
     //Lo asignamos como controlador raiz
-    self.window.rootViewController = webVC;
+    self.window.rootViewController = tabVC;
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor orangeColor];//Asigna color a la pantallar

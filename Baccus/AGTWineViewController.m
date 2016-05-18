@@ -14,6 +14,7 @@
     
     if (self = [super initWithNibName:nil bundle:nil]) {
         _model = aModel;
+        self.title = aModel.name;
     }
     
     return self;

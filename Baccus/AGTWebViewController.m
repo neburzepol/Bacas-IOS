@@ -20,6 +20,7 @@
                                 bundle:nil]) {
         
         _model = aModel;
+        self.title = @"Web";
         
     }
     
