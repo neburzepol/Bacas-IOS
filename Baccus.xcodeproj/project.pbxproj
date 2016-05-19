@@ -17,6 +17,8 @@
 		F32376DF1CE953610053F8F9 /* AGTWineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32376DD1CE953610053F8F9 /* AGTWineViewController.xib */; };
 		F32376E21CE98F810053F8F9 /* splitView_score_glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F32376E11CE98F810053F8F9 /* splitView_score_glass@2x.png */; };
 		F32376E51CE98FF30053F8F9 /* bembibre.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F32376E41CE98FF30053F8F9 /* bembibre.jpg */; };
+		F371138E1CEE5DFF005BF239 /* comtesDeChampagne.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F371138C1CEE5DFF005BF239 /* comtesDeChampagne.jpg */; };
+		F371138F1CEE5DFF005BF239 /* zarate.gif in Resources */ = {isa = PBXBuildFile; fileRef = F371138D1CEE5DFF005BF239 /* zarate.gif */; };
 		F3F0F5741CEB8CD600F96007 /* AGTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F0F5721CEB8CD600F96007 /* AGTWebViewController.m */; };
 		F3F0F5751CEB8CD600F96007 /* AGTWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F0F5731CEB8CD600F96007 /* AGTWebViewController.xib */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,8 @@
 		F32376DD1CE953610053F8F9 /* AGTWineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTWineViewController.xib; sourceTree = "<group>"; };
 		F32376E11CE98F810053F8F9 /* splitView_score_glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splitView_score_glass@2x.png"; sourceTree = "<group>"; };
 		F32376E41CE98FF30053F8F9 /* bembibre.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bembibre.jpg; sourceTree = "<group>"; };
+		F371138C1CEE5DFF005BF239 /* comtesDeChampagne.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = comtesDeChampagne.jpg; sourceTree = "<group>"; };
+		F371138D1CEE5DFF005BF239 /* zarate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = zarate.gif; sourceTree = "<group>"; };
 		F3F0F5711CEB8CD600F96007 /* AGTWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWebViewController.h; sourceTree = "<group>"; };
 		F3F0F5721CEB8CD600F96007 /* AGTWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWebViewController.m; sourceTree = "<group>"; };
 		F3F0F5731CEB8CD600F96007 /* AGTWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTWebViewController.xib; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 		F32376E31CE98F870053F8F9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F371138C1CEE5DFF005BF239 /* comtesDeChampagne.jpg */,
+				F371138D1CEE5DFF005BF239 /* zarate.gif */,
 				F32376E41CE98FF30053F8F9 /* bembibre.jpg */,
 				F32376E11CE98F810053F8F9 /* splitView_score_glass@2x.png */,
 			);
@@ -283,9 +289,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F371138E1CEE5DFF005BF239 /* comtesDeChampagne.jpg in Resources */,
 				F32376DF1CE953610053F8F9 /* AGTWineViewController.xib in Resources */,
 				F32376B11CE934840053F8F9 /* Assets.xcassets in Resources */,
 				F32376E21CE98F810053F8F9 /* splitView_score_glass@2x.png in Resources */,
+				F371138F1CEE5DFF005BF239 /* zarate.gif in Resources */,
 				F32376E51CE98FF30053F8F9 /* bembibre.jpg in Resources */,
 				F3F0F5751CEB8CD600F96007 /* AGTWebViewController.xib in Resources */,
 			);
