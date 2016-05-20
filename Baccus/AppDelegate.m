@@ -25,16 +25,26 @@
     
     //Creamos el modelo
     AGTWineryModel *winery = [[AGTWineryModel alloc]init];
-    // Creamos el controlador
+    
+    // Creamos los controlador
     AGTWineryTableViewController *wineryVC = [[AGTWineryTableViewController alloc]initWithModel:winery
                                                                                           style:UITableViewStylePlain];
     
-    // Creamos uno navigation
-    UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:wineryVC];
+    AGTWineViewController *wineVC = [[AGTWineViewController alloc]initWithModel:[winery redWineAtIndex:0]];
     
+    // Creamos los navigation
+    UINavigationController *wineryNav = [[UINavigationController alloc]initWithRootViewController:wineryVC];
+    UINavigationController *wineNav = [[UINavigationController alloc]initWithRootViewController:wineVC];
+    
+    //Creamos el combinador: SplitViewController
+    UISplitViewController *splitVC = [[UISplitViewController alloc]init];
+    splitVC.viewControllers = @[wineryNav, wineNav];
+    
+    //Asignamos Delegados
+    splitVC.delegate = wineVC;
     
     //Lo asignamos como controlador Raiz
-    self.window.rootViewController = navVC;
+    self.window.rootViewController = splitVC;
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor orangeColor];//Asigna color a la pantallar
