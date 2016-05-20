@@ -38,6 +38,13 @@
                                                                          blue:0.13
                                                                         alpha:1];
     
+    //Validamos si el controlador primario (Tabla de vinos) esta oculto, añadimos el boton al navigation
+    if (self.splitViewController.displayMode == UISplitViewControllerDisplayModePrimaryHidden){
+        
+        self.navigationItem.rightBarButtonItem = self.splitViewController.displayModeButtonItem;
+        
+    }
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -108,21 +115,17 @@
 
 #pragma mark - UISplitViewControllerDelegate
 
+
 -(void)splitViewController:(UISplitViewController *)svc
-    willHideViewController:(UIViewController *)aViewController
-         withBarButtonItem:(UIBarButtonItem *)barButtonItem
-      forPopoverController:(UIPopoverController *)pc{
+   willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode{
     
-    self.navigationItem.rightBarButtonItem = barButtonItem;
+    if (displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
+        self.navigationItem.rightBarButtonItem = svc.displayModeButtonItem;
+    }else if (displayMode == UISplitViewControllerDisplayModeAllVisible){
+        self.navigationItem.rightBarButtonItem = nil;
+    }
     
 }
 
--(void)splitViewController:(UISplitViewController *)svc
-    willShowViewController:(UIViewController *)aViewController
- invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem{
-    
-    self.navigationItem.rightBarButtonItem = nil;
-    
-}
 
 @end
