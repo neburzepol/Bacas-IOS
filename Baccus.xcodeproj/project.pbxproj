@@ -19,6 +19,8 @@
 		F32376E51CE98FF30053F8F9 /* bembibre.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F32376E41CE98FF30053F8F9 /* bembibre.jpg */; };
 		F371138E1CEE5DFF005BF239 /* comtesDeChampagne.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F371138C1CEE5DFF005BF239 /* comtesDeChampagne.jpg */; };
 		F371138F1CEE5DFF005BF239 /* zarate.gif in Resources */ = {isa = PBXBuildFile; fileRef = F371138D1CEE5DFF005BF239 /* zarate.gif */; };
+		F37113921CEE6E8C005BF239 /* AGTWineryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F37113911CEE6E8C005BF239 /* AGTWineryModel.m */; };
+		F37113951CEEB37D005BF239 /* AGTWineryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F37113941CEEB37D005BF239 /* AGTWineryTableViewController.m */; };
 		F3F0F5741CEB8CD600F96007 /* AGTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F0F5721CEB8CD600F96007 /* AGTWebViewController.m */; };
 		F3F0F5751CEB8CD600F96007 /* AGTWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F0F5731CEB8CD600F96007 /* AGTWebViewController.xib */; };
 /* End PBXBuildFile section */
@@ -62,6 +64,10 @@
 		F32376E41CE98FF30053F8F9 /* bembibre.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bembibre.jpg; sourceTree = "<group>"; };
 		F371138C1CEE5DFF005BF239 /* comtesDeChampagne.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = comtesDeChampagne.jpg; sourceTree = "<group>"; };
 		F371138D1CEE5DFF005BF239 /* zarate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = zarate.gif; sourceTree = "<group>"; };
+		F37113901CEE6E8C005BF239 /* AGTWineryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWineryModel.h; sourceTree = "<group>"; };
+		F37113911CEE6E8C005BF239 /* AGTWineryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWineryModel.m; sourceTree = "<group>"; };
+		F37113931CEEB37D005BF239 /* AGTWineryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWineryTableViewController.h; sourceTree = "<group>"; };
+		F37113941CEEB37D005BF239 /* AGTWineryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWineryTableViewController.m; sourceTree = "<group>"; };
 		F3F0F5711CEB8CD600F96007 /* AGTWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWebViewController.h; sourceTree = "<group>"; };
 		F3F0F5721CEB8CD600F96007 /* AGTWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWebViewController.m; sourceTree = "<group>"; };
 		F3F0F5731CEB8CD600F96007 /* AGTWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTWebViewController.xib; sourceTree = "<group>"; };
@@ -158,6 +164,8 @@
 			children = (
 				F32376D71CE93E590053F8F9 /* AGTWineModel.h */,
 				F32376D81CE93E590053F8F9 /* AGTWineModel.m */,
+				F37113901CEE6E8C005BF239 /* AGTWineryModel.h */,
+				F37113911CEE6E8C005BF239 /* AGTWineryModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -171,6 +179,8 @@
 				F3F0F5711CEB8CD600F96007 /* AGTWebViewController.h */,
 				F3F0F5721CEB8CD600F96007 /* AGTWebViewController.m */,
 				F3F0F5731CEB8CD600F96007 /* AGTWebViewController.xib */,
+				F37113931CEEB37D005BF239 /* AGTWineryTableViewController.h */,
+				F37113941CEEB37D005BF239 /* AGTWineryTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -324,6 +334,8 @@
 				F32376AF1CE934840053F8F9 /* AppDelegate.m in Sources */,
 				F3F0F5741CEB8CD600F96007 /* AGTWebViewController.m in Sources */,
 				F32376D91CE93E590053F8F9 /* AGTWineModel.m in Sources */,
+				F37113921CEE6E8C005BF239 /* AGTWineryModel.m in Sources */,
+				F37113951CEEB37D005BF239 /* AGTWineryTableViewController.m in Sources */,
 				F32376AC1CE934840053F8F9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
