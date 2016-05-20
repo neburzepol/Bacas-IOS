@@ -40,6 +40,8 @@
     UISplitViewController *splitVC = [[UISplitViewController alloc]init];
     splitVC.viewControllers = @[wineryNav, wineNav];
     
+    //Asignamos Delegados
+    splitVC.delegate = wineVC;
     
     //Lo asignamos como controlador Raiz
     self.window.rootViewController = splitVC;
