@@ -45,17 +45,14 @@
     
 }
 
--(void)webViewDidStartLoad:(UIWebView *)webView{
-    
-    [self.activityView startAnimating];
-    [self.activityView setHidden:NO];
-    
-}
 
 #pragma mark - Utils
 -(void)displayURL:(NSURL *)aUrl{
     
     self.browser.delegate = self;
+    
+    self.activityView.hidden = NO;
+    [self.activityView startAnimating];
         
     [self.browser loadRequest:[NSURLRequest requestWithURL:aUrl]];
     

@@ -20,6 +20,7 @@
     
     if (self = [super initWithStyle:aStyle]) {
         _model = aModel;
+        self.title = @"Baccus";
     }
     
     
@@ -36,12 +37,36 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    self.edgesForExtendedLayout= UIRectEdgeNone;
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.5
+                                                                           green:0
+                                                                            blue:0.13
+                                                                           alpha:1];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    if (section == RED_WINE_SECTION) {
+        return @"Red Wines";
+    }else if(section == WHITE_WINE_SECTION){
+        return @"White Wines";
+    }else{
+        return @"Other Wines";
+    }
+    
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
@@ -94,7 +119,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    //Supongamos que estamos en un NavigationController
+    //Supongamos que estamos en un NavigationController (Aqui es donde ocurre la magia)
     
     //Averiguamos de que vino se trata
     AGTWineModel *wine = nil;
