@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "AGTWineryModel.h"
+
+#define RED_WINE_SECTION 0
+#define WHITE_WINE_SECTION 1
+#define OTHER_WINE_SECTION 2
+
 @interface AGTWineryTableViewController : UITableViewController
 
 @property (strong, nonatomic) AGTWineryModel *model;

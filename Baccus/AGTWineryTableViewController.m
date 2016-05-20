@@ -7,6 +7,8 @@
 //
 
 #import "AGTWineryTableViewController.h"
+#import "AGTWineViewController.h"
+#import "AGTWineModel.h"
 
 @interface AGTWineryTableViewController ()
 
@@ -42,26 +44,76 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
+
+    if (section == RED_WINE_SECTION) {
+        return self.model.redWineCount;
+    }else if (section ==WHITE_WINE_SECTION){
+        return self.model.whiteWineCount;
+    }else{
+        return self.model.otherWineCount;
+    }
+    
     return 0;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIndentifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIndentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIndentifier];
     
-    // Configure the cell...
+    if (cell == nil) {
+        //tenemos que crearla a mano
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle
+                                     reuseIdentifier:CellIndentifier];
+    }
+    
+    //Averiguar de que modelo de vino nos estan hablando
+    AGTWineModel *wine = nil;
+    if (indexPath.section == RED_WINE_SECTION) {//Con el Path podemos determinar la seccion al igual que la fila :)
+        wine = [self.model redWineAtIndex:indexPath.row];
+    }else if (indexPath.section == WHITE_WINE_SECTION){
+        wine = [self.model whiteWineAtIndex:indexPath.row];
+    }else{
+        wine = [self.model otherWineAtIndex:indexPath.row];
+    }
+    
+    
+    //Sincronizar celda(Vista) y modelo (vino)
+    cell.imageView.image = wine.photo;
+    cell.textLabel.text =  wine.name;
+    cell.detailTextLabel.text = wine.wineCompanyName;
     
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //Supongamos que estamos en un NavigationController
+    
+    //Averiguamos de que vino se trata
+    AGTWineModel *wine = nil;
+    if (indexPath.section == RED_WINE_SECTION) {
+        wine = [self.model redWineAtIndex:indexPath.row];
+    }else if (indexPath.section ==WHITE_WINE_SECTION){
+        wine = [self.model whiteWineAtIndex:indexPath.row];
+    }else{
+        wine = [self.model otherWineAtIndex:indexPath.row];
+    }
+    
+    //Creamos un controlador para dicho vino
+    AGTWineViewController *wineVC = [[AGTWineViewController alloc]initWithModel:wine];
+    
+    //Hacemos un push al NavigationController del que estamos
+    [self.navigationController pushViewController:wineVC
+                                         animated:YES];
+    
+}
 
 /*
 // Override to support conditional editing of the table view.
