@@ -51,7 +51,7 @@
     
     self.browser.delegate = self;
     
-    self.activityView.hidden = NO;
+    //self.activityView.hidden = NO;
     [self.activityView startAnimating];
         
     [self.browser loadRequest:[NSURLRequest requestWithURL:aUrl]];
