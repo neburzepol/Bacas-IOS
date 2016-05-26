@@ -127,5 +127,17 @@
     
 }
 
+#pragma mark - WineryTableViewControllerDelegate
+
+-(void)wineryTableViewController:(AGTWineryTableViewController *)wineryVC
+                  didSelecteWine:(AGTWineModel*) aWine{
+    
+    self.model = aWine;
+    self.title = aWine.name;
+    
+    [self syncModelWithView];
+    
+}
+
 
 @end
