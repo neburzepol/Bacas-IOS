@@ -117,6 +117,8 @@
     return cell;
 }
 
+#pragma mark: Table View delegate
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     //Supongamos que estamos en un NavigationController (Aqui es donde ocurre la magia)
@@ -131,14 +133,16 @@
         wine = [self.model otherWineAtIndex:indexPath.row];
     }
     
-    //Creamos un controlador para dicho vino
-    AGTWineViewController *wineVC = [[AGTWineViewController alloc]initWithModel:wine];
+    [self.delegate wineryTableViewController:self didSelecteWine:wine];
     
-    //Hacemos un push al NavigationController del que estamos
-    [self.navigationController pushViewController:wineVC
-                                         animated:YES];
+    //Notificación
+    
+    NSNotification *n = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION_NAME object:self userInfo:@{WINE_KEY:wine}];
+    
+    [[NSNotificationCenter defaultCenter] postNotification:n];
     
 }
+
 
 /*
 // Override to support conditional editing of the table view.

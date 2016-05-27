@@ -42,6 +42,7 @@
     
     //Asignamos Delegados
     splitVC.delegate = wineVC;
+    wineryVC.delegate =wineVC;
     
     //Lo asignamos como controlador Raiz
     self.window.rootViewController = splitVC;

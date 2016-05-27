@@ -47,10 +47,6 @@
     
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    
-}
-
 #pragma mark - actions
 -(IBAction)displayWeb:(id)sender{
     
@@ -124,6 +120,18 @@
     }else if (displayMode == UISplitViewControllerDisplayModeAllVisible){
         self.navigationItem.rightBarButtonItem = nil;
     }
+    
+}
+
+#pragma mark - WineryTableViewControllerDelegate
+
+-(void)wineryTableViewController:(AGTWineryTableViewController *)wineryVC
+                  didSelecteWine:(AGTWineModel*) aWine{
+    
+    self.model = aWine;
+    self.title = aWine.name;
+    
+    [self syncModelWithView];
     
 }
 
