@@ -47,10 +47,6 @@
     
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    
-}
-
 #pragma mark - actions
 -(IBAction)displayWeb:(id)sender{
     

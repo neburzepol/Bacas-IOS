@@ -117,6 +117,8 @@
     return cell;
 }
 
+#pragma mark: Table View delegate
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     //Supongamos que estamos en un NavigationController (Aqui es donde ocurre la magia)
@@ -133,7 +135,14 @@
     
     [self.delegate wineryTableViewController:self didSelecteWine:wine];
     
+    //Notificación
+    
+    NSNotification *n = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION_NAME object:self userInfo:@{WINE_KEY:wine}];
+    
+    [[NSNotificationCenter defaultCenter] postNotification:n];
+    
 }
+
 
 /*
 // Override to support conditional editing of the table view.
