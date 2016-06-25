@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "AGTWineModel.h"
 
+#define RED_WINE_KEY = @"Tinto"
+#define WHITE_WINE_KEY = @"Blanco"
+#define OTHER_WINE_KEY = @"Rosado"
+
 @interface AGTWineryModel : NSObject
 
 @property (readonly, nonatomic) int redWineCount;
