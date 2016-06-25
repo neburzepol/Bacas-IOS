@@ -63,8 +63,8 @@
               wineCompanyName:[aDict objectForKey:@"wineCompanyName"]
                          type:[aDict objectForKey:@"type"]
                        origin:[aDict objectForKey:@"origin"]
-                       grapes:
-               wineCompanyWeb:[aDict objectForKey:@"wineCompanyWeb"]
+                       grapes:[self extractGrapesFromJSONArray:[aDict objectForKey:@"grapes"]]
+               wineCompanyWeb:[NSURL URLWithString:[aDict objectForKey:@"wine_web"]]    //fix/11a
                         notes:[aDict objectForKey:@"notes"]
                        rating:[[aDict objectForKey:@"rating"]intValue]
                      photoURL:[NSURL URLWithString:[aDict objectForKey:@"picture"]]];
@@ -130,8 +130,9 @@
     
 }
 
--(NSString*)description{
-    
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"Name: %@\nCompany name: %@\nType: %@\nOrigin: %@\nGrapes: %@\nWine company web: %@\nNotes: %@\nRating: %d\n", self.name, self.wineCompanyName, self.type, self.origin, self.grapes, self.wineCompanyWeb, self.notes, self.rating];
 }
 
 #pragma mark - Utils
