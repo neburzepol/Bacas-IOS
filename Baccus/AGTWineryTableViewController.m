@@ -141,6 +141,85 @@
     
     [[NSNotificationCenter defaultCenter] postNotification:n];
     
+    //Guardar el ultimo vino seleccionado
+    [self saveLastSelectedWineAtSection:indexPath.section
+                                    row:indexPath.row];
+    
+}
+#pragma mark -  Utils
+
+- (AGTWineModel *)wineForIndexPath:(NSIndexPath *)indexPath
+{
+    // Averiguamos de qué vino se trata
+    AGTWineModel *wine = nil;
+    
+    if (indexPath.section == RED_WINE_SECTION) {
+        wine = [self.model redWineAtIndex:indexPath.row];
+    }
+    else if (indexPath.section == WHITE_WINE_SECTION) {
+        wine = [self.model whiteWineAtIndex:indexPath.row];
+    }
+    else {
+        wine = [self.model otherWineAtIndex:indexPath.row];
+    }
+    
+    return wine;
+}
+
+#pragma mark: NSUserDefaults
+-(NSDictionary *)setDefaults{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    //Por defecto mostramos el primero de los vinos
+    NSDictionary *defaultWineCoords = @{SECTION_KEY:@(RED_WINE_SECTION), ROW_KEY:@0};
+    
+    //Lo asignamos
+    [defaults setObject:defaultWineCoords
+                 forKey:LAST_WINE_KEY];
+    
+    //Guardamos por si las moscas
+    [defaults synchronize];
+    
+    return defaultWineCoords;
+
+}
+
+-(void)saveLastSelectedWineAtSection:(NSUInteger)section row:(NSUInteger)row{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@{SECTION_KEY:@(section),
+        ROW_KEY:@(row)}
+                 forKey:LAST_WINE_KEY];
+    
+    [defaults synchronize]; //Por si acaso, que Murphy acecha.
+    
+}
+
+-(AGTWineModel*)lastSelectedWine{
+    
+    NSIndexPath *indexPath = nil;
+    NSDictionary *coords = nil;
+    
+    coords = [[NSUserDefaults standardUserDefaults] objectForKey:LAST_WINE_KEY];
+    
+    if (coords == nil) {
+        //No hay nada bajo la clave LAST_WINE_KEY
+        //Esto quiere decir que es la primera vez que se llama a la app
+        //Ponemos un valor por defecto: EL primero de los vinos
+        coords = [self setDefaults];
+        
+    }else{
+        //Ya hay algo, es decir, en algun momento se guardo.
+        //No hay nada en especial que hacer
+    }
+    //Transformamos estas coordenadas en un indexpath
+    indexPath =[NSIndexPath indexPathForRow:[[coords objectForKey:ROW_KEY]integerValue]
+                                  inSection:[[coords objectForKey:SECTION_KEY]integerValue]];
+    
+    //Devolvemos el vino en cuestion
+    return [self wineForIndexPath:indexPath];
+    
 }
 
 

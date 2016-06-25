@@ -13,8 +13,14 @@
 #define WHITE_WINE_SECTION 1
 #define OTHER_WINE_SECTION 2
 
-#define NEW_WINE_NOTIFICATION_NAME @"newWine"
+#define DID_SELECTED_WINE_NOTIFICATION_NAME @"newWineSelected"
 #define WINE_KEY @"wine"
+
+#define SECTION_KEY @"section"
+#define ROW_KEY @"row"
+#define LAST_WINE_KEY @"lastWine"
+
+#define NEW_WINE_NOTIFICATION_NAME @"newWine"
 
 //Declaracion adelantada (Adelantamos diciendole que es una clase, para contrastar el problema en el protocolo)
 @class AGTWineryTableViewController;
@@ -30,7 +36,10 @@
 @property (strong, nonatomic) AGTWineryModel *model;
 @property (weak, nonatomic)id<WineryTableViewControllerDelegate> delegate;
 
+//Designado
 -(id)initWithModel:(AGTWineryModel*)aModel
              style:(UITableViewStyle) aStyle;
+
+- (AGTWineModel *)lastSelectedWine;
 
 @end
