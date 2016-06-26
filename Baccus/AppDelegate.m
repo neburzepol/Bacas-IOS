@@ -19,15 +19,27 @@
 
 @implementation AppDelegate
 
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];//acopla la pantalla
-    
-    //Creamos el modelo
-    AGTWineryModel *winery = [[AGTWineryModel alloc]init];
+-(UIViewController*)rootViewControllerPhoneWithModel:(AGTWineryModel*)aModel{
     
     // Creamos los controlador
-    AGTWineryTableViewController *wineryVC = [[AGTWineryTableViewController alloc]initWithModel:winery
+    AGTWineryTableViewController *wineryVC = [[AGTWineryTableViewController alloc]initWithModel:aModel
+                                                                                          style:UITableViewStylePlain];
+
+    // Creamos los navigation
+    UINavigationController *wineryNav = [[UINavigationController alloc]initWithRootViewController:wineryVC];
+    
+    
+    //Asignamos Delegados
+    wineryVC.delegate =wineryVC;
+    
+    return wineryNav;
+    
+}
+
+-(UIViewController*)rootViewControllerPadWithModel:(AGTWineryModel*)aModel{
+    
+    // Creamos los controlador
+    AGTWineryTableViewController *wineryVC = [[AGTWineryTableViewController alloc]initWithModel:aModel
                                                                                           style:UITableViewStylePlain];
     
     AGTWineViewController *wineVC = [[AGTWineViewController alloc]initWithModel:[wineryVC lastSelectedWine]];
@@ -44,8 +56,27 @@
     splitVC.delegate = wineVC;
     wineryVC.delegate =wineVC;
     
+    return splitVC;
+    
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];//acopla la pantalla
+    
+    UIViewController *rootVC = nil;
+    
+    //Creamos el modelo
+    AGTWineryModel *model = [[AGTWineryModel alloc]init];
+    
+    if (!(IS_IPHONE)) {
+        //Tableta
+        rootVC = [self rootViewControllerPadWithModel:model];
+    }else{
+        rootVC = [self rootViewControllerPhoneWithModel:model];
+    }
+    
     //Lo asignamos como controlador Raiz
-    self.window.rootViewController = splitVC;
+    self.window.rootViewController = rootVC;
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor orangeColor];//Asigna color a la pantallar

@@ -27,11 +27,12 @@
 
 @protocol WineryTableViewControllerDelegate <NSObject>
 
--(void)wineryTableViewController:(AGTWineryTableViewController *)wineryVC didSelecteWine:(AGTWineModel*) aWine;
+-(void)wineryTableViewController:(AGTWineryTableViewController *)wineryVC
+                  didSelecteWine:(AGTWineModel*) aWine;
 
 @end
 
-@interface AGTWineryTableViewController : UITableViewController
+@interface AGTWineryTableViewController : UITableViewController <WineryTableViewControllerDelegate>
 
 @property (strong, nonatomic) AGTWineryModel *model;
 @property (weak, nonatomic)id<WineryTableViewControllerDelegate> delegate;

@@ -121,31 +121,44 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    //Supongamos que estamos en un NavigationController (Aqui es donde ocurre la magia)
+    AGTWineModel *wine = [self wineForIndexPath:indexPath];
     
-    //Averiguamos de que vino se trata
-    AGTWineModel *wine = nil;
-    if (indexPath.section == RED_WINE_SECTION) {
-        wine = [self.model redWineAtIndex:indexPath.row];
-    }else if (indexPath.section ==WHITE_WINE_SECTION){
-        wine = [self.model whiteWineAtIndex:indexPath.row];
+    if (IS_IPHONE) {
+        AGTWineViewController *wineVC = [[AGTWineViewController alloc]initWithModel:wine];
+        [self.navigationController pushViewController:wineVC animated:YES];
     }else{
-        wine = [self.model otherWineAtIndex:indexPath.row];
+     
+        [self.delegate wineryTableViewController:self didSelecteWine:wine];
+        
+        //Notificación
+        
+        NSNotification *n = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION_NAME object:self userInfo:@{WINE_KEY:wine}];
+        
+        [[NSNotificationCenter defaultCenter] postNotification:n];
+        
+        //Guardar el ultimo vino seleccionado
+        [self saveLastSelectedWineAtSection:indexPath.section
+                                        row:indexPath.row];
+        
     }
     
-    [self.delegate wineryTableViewController:self didSelecteWine:wine];
-    
-    //Notificación
-    
-    NSNotification *n = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION_NAME object:self userInfo:@{WINE_KEY:wine}];
-    
-    [[NSNotificationCenter defaultCenter] postNotification:n];
-    
-    //Guardar el ultimo vino seleccionado
-    [self saveLastSelectedWineAtSection:indexPath.section
-                                    row:indexPath.row];
-    
 }
+
+#pragma mark - WineryTableViewControllerDelegate
+
+-(void)wineryTableViewController:(AGTWineryTableViewController *)wineryVC
+                  didSelecteWine:(AGTWineModel*) aWine{
+    
+    //Crea el controlador
+    AGTWineViewController *wineVC = [[AGTWineViewController alloc]initWithModel:aWine];
+    // Hace un push
+    [self.navigationController pushViewController:wineVC
+                                         animated:YES];
+    
+    
+
+}
+
 #pragma mark -  Utils
 
 - (AGTWineModel *)wineForIndexPath:(NSIndexPath *)indexPath
